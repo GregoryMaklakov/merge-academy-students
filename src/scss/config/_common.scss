@@ -10,17 +10,26 @@
 
 html {
   font-size: u.$base-font-size;
-  background-color: u.$color-bg;
+  background-color: u.$color-bg-light;
 }
 
 body {
   font-family: u.$primary-font;
   color: u.$base-font-color;
+  background-color: u.$color-bg-light;
 }
+
+// якщо налаштування системи(teма) юзера темна - ВКЛ dark  
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    background-color: u.$color-bg-dark;
+  }
+} */
 
 .container {
   width: 100%;
-  max-width: calc(800px + u.$mobile-container-padding-x);
+  max-width: calc(1060px + u.$mobile-container-padding-x);
   padding: {
     left: u.$mobile-container-padding-x;
     right: u.$mobile-container-padding-x;
@@ -28,5 +37,17 @@ body {
   margin: {
     left: auto;
     right: auto;
+  }
+  &--big {
+    width: 100%;
+    max-width: calc(1244px + u.$mobile-container-padding-x);
+    padding: {
+      left: u.$mobile-container-padding-x;
+      right: u.$mobile-container-padding-x;
+    }
+    margin: {
+    left: auto;
+    right: auto;
+    }
   }
 }

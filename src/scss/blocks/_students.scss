@@ -1,0 +1,28 @@
+@use '../components/utils' as u;
+
+.students {
+    
+    &__header {
+        
+    }
+
+    &__container {
+
+    }
+    &__container {
+    
+    }
+
+    &__cards {
+        padding-top: calc(u.rem(64) + u.rem(112));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: u.rem(32);
+        flex-wrap: wrap;
+        @include u.media('tablet-wide', max){
+            justify-content: center;
+        }
+    }
+}
+
