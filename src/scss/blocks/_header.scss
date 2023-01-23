@@ -1,3 +1,46 @@
+@use '../components/utils' as u;
+
+.header {
+    height: u.rem(112);
+    padding-top: u.rem(30);
+    padding-bottom: 30px;
+    box-shadow: 0px 4px 35px -22px rgb(68 82 108);
+    position: fixed;
+    background-color: u.$color-bg-light;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    &__title,
+    .text-typing {
+        display: inline;
+        font-weight: 500;
+        font-size: u.rem(40);
+        letter-spacing: 0.02em;
+        color: u.$base-font-color;
+    }
+}
+body {
+    &.dark {
+        .header {
+            background-color: u.$color-bg-dark;
+            &__title,
+            .text-typing {
+                display: inline;
+                font-weight: 500;
+                font-size: u.rem(40);
+                letter-spacing: 0.02em;
+                color: u.$font-color-dark-theme;
+            }
+        }
+    }
+}
+.container--big {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
 
 
 

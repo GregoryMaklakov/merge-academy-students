@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>Parcel by Merge</title>
-    <link rel="stylesheet" href="./scss/style.scss"/>
-  </head>
-  <body>
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Merge Academy students</title>
+  <link rel="stylesheet" href="./scss/style.scss" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- SVG -->
-    <svg style="display: none;">
-    
-    </svg>
-    <!-- Script --> 
-    <script src="main.js"></script>
-  </body>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container container container--big">
+      <div class="header__wpr">
+        <div id="typed-strings">
+          <h1 class="header__title">Merge Academy students</h1>
+        </div>
+        <div class="text-typing">
+          <span id="typed"></span>
+        </div>
+      </div>
+
+      <div class="header__switch switch" data-aos="zoom-out-left">
+        <input id="switch" class="switch__input" name="switch" type="checkbox">
+        <label class="switch__label" for="switch"></label>
+      </div>
+    </div>
+  </header>
+  <section class="students">
+    <div class="students__container container">
+
+     <!-- кнопки перемикання теми -->
+     
+
+      <ul class="students__cards">
+      </ul>
+    </div>
+  </section>
+
+  <!-- SVG -->
+  <svg style="display: none;">
+
+  </svg>
+  <!-- Script -->
+  <script type="module" src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <script src="https://kit.fontawesome.com/0279d6372d.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
 </html>
