@@ -48,11 +48,16 @@
         margin-right: 8px;
     }
 
-    &__link {
+    &__svg {
+        width: 25px;
+        height: 25px;
+        @media (any-hover: hover){
+            &:hover{
+                fill: #4a4949;
+            }
+        }
     }
-    &__image {
-        color: red;
-    }
+
 }
 
 body {
@@ -62,6 +67,14 @@ body {
             border: 1px solid u.$color-gray;
             &__name {
                 color: u.$font-color-dark-theme;
+            }
+            &__svg {
+                fill: #f4ec92;
+                @media (any-hover: hover){
+                    &:hover{
+                        fill: #837800
+                    }
+                }
             }
         }
     }

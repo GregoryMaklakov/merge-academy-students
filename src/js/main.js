@@ -58,12 +58,19 @@ const getPerson = students.map((item) => {
           </div>
 
           <a href="${item.github}" class="card__link">
-            <img class="card__image" src="${svgGitHumIcon}" alt="github">
+            <svg class="card__svg"> 
+                <use xlink:href="#github-icon"/></use>
+            </svg>
           </a>
         </li>
     `);
 });
 
+    // + Один варіант відображення (але ховер не пряцюе)
+// <a href="${item.github}" class="card__link">
+//     <img class="card__image" src="${svgGitHumIcon}" alt="github">
+//   </a>
+// </li>
 //========================================================================================================================================================
 
 //Theme 
