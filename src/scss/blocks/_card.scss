@@ -1,78 +1,134 @@
 @use '../components/utils' as u;
 
 .card {
-    width: 280px;
-    min-height: 200px;
-
+    width: 480px;
+    height: 104px;
     background: #FBFBFB;
     border: 1px solid #EFEDED;
     border-radius: 4px;
     filter: drop-shadow(1px 2px 8px rgba(113, 113, 113, 0.14));
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 24px;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0px 24px;
+    @include u.media('tablet-small', max){
+        padding: 0px 16px;
+        height: 80px;
+    }
     @include u.media('phone-wide', max){
         width: 100%;
     }
     &__photo {
-        width: 72px;
-        height: 72px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
-        margin-bottom: 12px;
+        margin-right: 24px;
+        @include u.media('tablet-small', max){
+            margin-right: 12px;
+            width: 32px;
+            height: 32px;
+        }
+        @media screen and (max-width: 374px){
+              display: none;
+        }
     }
 
     &__name {
         font-weight: 500;
-        font-size: u.rem(20);
+        font-size: u.rem(16);
         line-height: 17px;
         text-align: center;
         letter-spacing: 0.02em;
         color: #302F2F;
         margin-bottom: 8px;
+        @include u.media('tablet-small', max){
+            font-size: u.rem(14);
+        }
     }
-    &__image-wrp {
+    &__name-wrp {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        flex: auto;
+        height: 104px;
+        min-height: 100%;
+        border-right: 1px solid #EFEDED;
+        @include u.media('tablet-small', max){
+            height: 80px;
+        }
     }
     &__mail {
         font-weight: 400;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 14px;
         letter-spacing: 0.02em;
         color: #989191;
-        margin-bottom: 4px;
-    }
-    &__mail-svg {
-        margin-right: 8px;
-    }
-
-    &__svg {
-        width: 25px;
-        height: 25px;
+        @include u.media('tablet-small', max){
+            font-size: u.rem(12);
+        }
         @media (any-hover: hover){
             &:hover{
-                fill: #4a4949;
+                text-decoration: underline;
             }
         }
     }
-
+    &__mail-svg {
+        margin-right: 2px;
+    }
+    &__mail-wrp {
+        display: flex;
+        align-items: center;
+        img {
+            width: 18px;
+            height: 18px;
+            @include u.media('tablet-small', max){
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+    &__link-wrp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 24px;
+        @include u.media('tablet-small', max){
+            padding-left: 16px;
+        }
+    }
+    &__link {
+        svg {
+            @include u.size(28px);
+            @media (any-hover: hover){
+                &:hover{
+                    fill: #a9a4a4;
+                }
+            }
+        }
+    }
 }
 
 body {
     &.dark {
         .card {
             background-color: u.$color-gray;
-            border: 1px solid u.$color-gray;
+            border: 1px solid #8A8E97;
             &__name {
                 color: u.$font-color-dark-theme;
             }
+            &__name-wrp {
+                border-right: 1px solid #8A8E97;
+            }
+            &__ {
+                color: #A29B9B;
+            }
             &__svg {
-                fill: #f4ec92;
+                fill: #FFFFFF;
                 @media (any-hover: hover){
                     &:hover{
-                        fill: #837800
+                        fill: #ead918
                     }
                 }
             }
