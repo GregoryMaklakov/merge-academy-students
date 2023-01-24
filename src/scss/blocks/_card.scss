@@ -81,11 +81,11 @@
         display: flex;
         align-items: center;
         img {
-            width: 18px;
-            height: 18px;
+            width: 15px;
+            height: 12px;
             @include u.media('tablet-small', max){
-                width: 14px;
-                height: 14px;
+                width: 12px;
+                height: 9px;
             }
         }
     }
