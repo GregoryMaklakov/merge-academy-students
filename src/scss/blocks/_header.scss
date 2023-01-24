@@ -38,6 +38,9 @@ body {
                 font-size: u.rem(50);
                 letter-spacing: 0.02em;
                 color: u.$font-color-dark-theme;
+                @include u.media('tablet-small', max){
+                    font-size: u.rem(24);
+                }
             }
         }
     }
