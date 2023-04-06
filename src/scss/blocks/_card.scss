@@ -1,0 +1,137 @@
+@use '../components/utils' as u;
+
+.card {
+    width: 480px;
+    height: 104px;
+    background: #FBFBFB;
+    border: 1px solid #EFEDED;
+    border-radius: 4px;
+    filter: drop-shadow(1px 2px 8px rgba(113, 113, 113, 0.14));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0px 24px;
+    @include u.media('tablet-small', max){
+        padding: 0px 16px;
+        height: 80px;
+    }
+    @include u.media('phone-wide', max){
+        width: 100%;
+    }
+    &__photo {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        margin-right: 24px;
+        @include u.media('tablet-small', max){
+            margin-right: 12px;
+            width: 32px;
+            height: 32px;
+        }
+        @media screen and (max-width: 374px){
+              display: none;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: u.rem(16);
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #302F2F;
+        margin-bottom: 8px;
+        @include u.media('tablet-small', max){
+            font-size: u.rem(14);
+        }
+    }
+    &__name-wrp {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        flex: auto;
+        height: 104px;
+        min-height: 100%;
+        border-right: 1px solid #EFEDED;
+        @include u.media('tablet-small', max){
+            height: 80px;
+        }
+    }
+    &__mail {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: #989191;
+        @include u.media('tablet-small', max){
+            font-size: u.rem(12);
+        }
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    &__mail-svg {
+        margin-right: 2px;
+    }
+    &__mail-wrp {
+        display: flex;
+        align-items: center;
+        img {
+            width: 15px;
+            height: 12px;
+            @include u.media('tablet-small', max){
+                width: 12px;
+                height: 9px;
+            }
+        }
+    }
+    &__link-wrp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 24px;
+        @include u.media('tablet-small', max){
+            padding-left: 16px;
+        }
+    }
+    &__link {
+        svg {
+            @include u.size(28px);
+            @media (any-hover: hover){
+                &:hover{
+                    fill: #a9a4a4;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.dark {
+        .card {
+            background-color: u.$color-gray;
+            border: 1px solid #8A8E97;
+            &__name {
+                color: u.$font-color-dark-theme;
+            }
+            &__name-wrp {
+                border-right: 1px solid #8A8E97;
+            }
+            &__ {
+                color: #A29B9B;
+            }
+            &__svg {
+                fill: #FFFFFF;
+                @media (any-hover: hover){
+                    &:hover{
+                        fill: #ead918
+                    }
+                }
+            }
+        }
+    }
+}

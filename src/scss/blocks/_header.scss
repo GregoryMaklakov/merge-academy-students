@@ -1,3 +1,57 @@
+@use '../components/utils' as u;
+
+.header {
+    height: 112px;
+    box-shadow: 0px 4px 35px -22px rgb(68 82 108);
+    position: fixed;
+    background-color: u.$color-bg-light;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    &__title,
+    .text-typing {
+        font-family: 'VT323';
+        font-weight: 400;
+        font-size: 50px;
+        display: inline;
+        letter-spacing: 0.02em;
+        color: u.$base-font-color;
+        @include u.media('tablet-small', max){
+            font-size: u.rem(24);
+        }
+    }
+    &__wpr {
+        @include u.media('phone-wide', max){
+            max-width: 142px;
+        }
+    }
+}
+body {
+    &.dark {
+        .header {
+            background-color: u.$color-bg-dark;
+            &__title,
+            .text-typing {
+                display: inline;
+                font-weight: 500;
+                font-size: u.rem(50);
+                letter-spacing: 0.02em;
+                color: u.$font-color-dark-theme;
+                @include u.media('tablet-small', max){
+                    font-size: u.rem(24);
+                }
+            }
+        }
+    }
+}
+.container--big {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
 
 
 

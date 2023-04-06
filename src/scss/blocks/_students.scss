@@ -1,0 +1,19 @@
+@use '../components/utils' as u;
+
+.students {
+    &__cards {
+        padding-top: calc(64px + 112px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        gap: u.rem(32);
+        flex-wrap: wrap;
+        padding-bottom: 64px;
+        min-height: 100vh;
+        @include u.media('tablet-wide', max){
+            justify-content: center;
+        }
+    }
+}
+
